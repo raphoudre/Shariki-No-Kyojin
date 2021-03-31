@@ -17,9 +17,6 @@ if ($_SESSION['admin'] !== 'connected') {
 $productObj = new Produits;
 $categObj = new Categories;
 
-$allProducts = $productObj->getAllProducts();
-$allCategories = $categObj->getAllCategory();
-
 if (isset($_POST['delete'])) {
     $id = htmlspecialchars($_POST['delete']);
     $productObj->deleteProduct($id);
@@ -30,3 +27,6 @@ if (isset($_POST['submitChange'])) {
     $productObj->updateProduct($_POST['thisid'], $_POST["nom"], $_POST["description"], $_POST["prix"]);
     unset($_POST);
 }
+
+$allProducts = $productObj->getAllProducts();
+$allCategories = $categObj->getAllCategory();

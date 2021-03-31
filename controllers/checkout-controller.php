@@ -1,5 +1,5 @@
 <?php
-if(!isset($_POST["checkout"])){
+if(!isset($_GET["checkout"])){
     header('Location:../index.php');
     die();
 }

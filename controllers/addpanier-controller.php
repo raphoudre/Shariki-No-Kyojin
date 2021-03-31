@@ -6,9 +6,6 @@ require_once('../models/panier.php');
 require_once('../models/categories.php');
 
 $categObj = new Categories;
-
-$allCategories = $categObj->getAllCategory();
-
 if(isset($_GET['id'])){
     $productObj = new Produits;
     $panierObj = new Panier;
@@ -24,3 +21,4 @@ if(isset($_GET['id'])){
     header('Location:../index.php');
     die("Vous n'avez pas sélectionné de produit à ajouter au panier.");
 }
+$allCategories = $categObj->getAllCategory();

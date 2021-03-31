@@ -12,8 +12,8 @@ class Produits extends Database{
         $result = $queryObj->fetchAll();
         return $result;
     }
-    public function sortByCategory($categId){
-        $query = "SELECT * FROM produits WHERE Id_categories = $categId";
+    public function sortByCategory($id){
+        $query = "SELECT * FROM produits WHERE id_categories = $id";
         $queryObj = $this->dataBase->query($query);
         $result = $queryObj->fetchAll();
         return $result;
@@ -30,13 +30,13 @@ class Produits extends Database{
         $requestD->execute();    
     }
     public function updateProduct($id, $newname, $newdesc, $newprice){
-        $query = "UPDATE produits SET nom = :nom SET description = :desc SET prix = :prix WHERE id=:id";
-        $prepare = $this->dataBase->prepare($query);
-        $prepare->bindParam(':nom', $newname);
-        $prepare->bindParam(':desc', $newdesc);
-        $prepare->bindParam(':prix', $newprice);
-        $prepare->bindParam(':id', $id);
-        $prepare->execute();
+        $query = "UPDATE produits SET `nom` = :nom, `description` = :desc, `prix` = :prix WHERE `id` = :id";
+        $queryObj = $this->dataBase->prepare($query);
+        $queryObj->bindParam(':nom', $newname);
+        $queryObj->bindParam(':desc', $newdesc);
+        $queryObj->bindParam(':prix', $newprice);
+        $queryObj->bindParam(':id', $id);
+        $queryObj->execute();
     }
     public function getMultipleProducts($ids){
         if (empty($ids)) {

@@ -9,7 +9,7 @@ if ($_SESSION['admin'] !== 'connected') {
 }
 $clientObj = new Clients;
 $orderObj = new Commandes;
-$allOrders = $orderObj->getAllOrders();
+
 if (isset($_POST['update'])) {
     $orderObj->changeState($_POST['update'], 1);
     header('Location:orders.php');
@@ -18,4 +18,4 @@ if (isset($_POST['cancel'])) {
     $orderObj->changeState($_POST['cancel'], 2);
     header('Location:orders.php');
 }
-
+$allOrders = $orderObj->getAllOrders();

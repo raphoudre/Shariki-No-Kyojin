@@ -9,7 +9,7 @@ $categObj = new Categories;
 
 $productObj = new Produits;
 
-$allCategories = $categObj->getAllCategory();
+
 
 
 if (!isset($_GET['categorie'])) {
@@ -26,3 +26,4 @@ if (isset($_GET['search'])) {
     $search = $_GET['search'];
     $allProducts = $productObj->getByNav($search);
 }
+$allCategories = $categObj->getAllCategory();

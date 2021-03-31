@@ -54,7 +54,7 @@ require_once('../../controllers/products-controller.php')
                         <td><input name="nom" type="text" class="form-control" value="<?= $product['nom'] ?>"></td>
                         <td><textarea name="description" type="text" class="form-control"><?= $product['description'] ?></textarea></td>
                         <td><input name="prix" type="number" class="form-control" value="<?= $product['prix'] ?>"></td>
-                        <td><button type="submitChange" class="btn btn-warning">Modifier</button></td>
+                        <td><button type="submit" name="submitChange" class="btn btn-warning">Modifier</button></td>
                     </form>
                 </tr>
                 <div class="modal fade" id="deleteModal<?= $product['id'] ?>" tabindex="-1" role="dialog"

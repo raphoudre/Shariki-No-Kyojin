@@ -7,9 +7,8 @@ if ($_SESSION['admin'] !== 'connected') {
     die();
 }
 $userObj = new Clients;
-$allUsers = $userObj->getAllClients();
-
 if (isset($_GET['delete'])) {
     $id = $_GET['deleteid'];
     $userObj->deleteTheClient($id);
 }
+$allUsers = $userObj->getAllClients();

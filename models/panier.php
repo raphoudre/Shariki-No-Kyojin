@@ -18,7 +18,6 @@ class Panier extends Database{
         $total = 0;
         $ids = array_keys($_SESSION['panier']);
         if (empty($ids)) {
-            echo '<em>vide</em>  ';
             $this->checkCount = 'empty';
         } else {
             $theId = implode(',',$ids);

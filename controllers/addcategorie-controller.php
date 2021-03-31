@@ -2,7 +2,7 @@
 require_once('../../models/database.php');
 require_once('../../models/categories.php');
 $categObj = new Categories;
-$allCategorie = $categObj->getAllCategory();
+
 if (isset($_GET['add'])) {
     $name = $_GET["name"];
     $categObj->addCategory($name);
@@ -21,3 +21,4 @@ if (isset($_GET['delete'])) {
     $categObj->deleteCategory($id);
     header('Location:addcategorie.php?modif=true&err=deleted');
 }
+$allCategorie = $categObj->getAllCategory();

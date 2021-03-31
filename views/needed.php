@@ -1,8 +1,9 @@
 <?php
 function headerPage(){ ?>
+    <a href="../index.php">
     <div class="row d-flex justify-content-center">
         <img src="../assets/img/misc/logo.png" class="logo img-fluid" width="" alt="">
-    </div>
+    </div></a>
 <?php }
 function footerPage(){
     ?>
@@ -18,6 +19,10 @@ function footerPage(){
                         <a href="../views/adminpanel.php">panel administrateur</a>
                     <?php }
                 }?>
+                <p>|</p>
+                <a href="<?php if(isset($pageSwitch) && $pageSwitch == 'index'){echo '#';} else {echo '../index.php';}; ?>">Accueil</a>
+                <p>|</p>
+                <a href="views/cgv.php">Conditions générales de ventes</a>
             </div>
         </div>
     </footer>
