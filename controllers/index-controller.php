@@ -13,7 +13,11 @@ $productObj = new Produits;
 
 
 if (!isset($_GET['categorie'])) {
-    $allProducts = $productObj->getAllProducts();
+    if (isset($_POST['sortSwitch'])){
+        $allProducts = $productObj->selectSort($_POST['sortSwitch']);
+    } else {
+        $allProducts = $productObj->getAllProducts();
+    }
 } else {
     if ($_GET['categorie'] == "null") {
         $allProducts = $productObj->getAllProducts();

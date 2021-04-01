@@ -46,7 +46,11 @@ body {
     width: 100%!important;
     height: 100vh!important;
 }
-
+.cardImg{
+    max-width: 190px!important;
+    max-height: 190px!important;
+    object-fit: contain!important;
+}
 .cartFormStyle{
     margin: 10%;
     padding: 5%;

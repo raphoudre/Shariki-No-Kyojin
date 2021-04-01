@@ -59,6 +59,7 @@
                 <a href="./addcategorie.php" type="submit">Ajouter une nouvelle catégorie</a>
             </div>
             <div class="form-group">
+                <button type="submit" class="btn btn-block btn-outline-success">Envoyer</button>
                 <a class="" href="../../views/admin/products.php">Retour</a>
             </div>
         </form>

@@ -4,7 +4,7 @@ if ($_SESSION['admin'] !== 'connected') {
     header('Location: ../index.php');
     die();
 }
-if (isset($_POST['submit'])) {
+if (!empty($_POST['price'])) {
     require_once('../models/database.php');
     require_once('../models/categories.php');
 } else {
@@ -15,7 +15,7 @@ if (isset($_POST['submit'])) {
 $categObj = new Categories;
 $allCategories = $categObj->getAllCategory();
 
-if (!empty($_POST['name']) && !empty($_POST['desc']) && !empty($_POST['price']) && !empty($_POST['submit'])) {
+if (!empty($_POST['name']) && !empty($_POST['desc']) && !empty($_POST['price'])) {
     $dataBase = new PDO("mysql:host=localhost;dbname=projetpro", "codeit","EPLVnWV7Ynj2VNgj");
     $target_dir = "../uploads/";
     $target_file = $target_dir.basename($_FILES["fileToUpload"]["name"]);
@@ -49,7 +49,7 @@ if (!empty($_POST['name']) && !empty($_POST['desc']) && !empty($_POST['price']) 
     }
     // Accepter seulements quelques extensions
     if ($imageFileType != "jpg" && $imageFileType != "png" && $imageFileType != "jpeg" &&
-        $imageFileType != "gif" && $imageFileType != "svg" && $imageFileType != "webm") {
+        $imageFileType != "gif" && $imageFileType != "svg" && $imageFileType != "webp") {
         echo "Désolé, seuls les JPG, JPEG, PNG & GIF sont autorisés.";
         $uploadOk = 0;
     }

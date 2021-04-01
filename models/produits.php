@@ -7,13 +7,19 @@ class Produits extends Database{
         return $result;
     }
     public function getAllProducts(){
-        $query = "SELECT * FROM produits";
+        $query = "SELECT * FROM produits ORDER BY nom ASC";
         $queryObj = $this->dataBase->query($query);
         $result = $queryObj->fetchAll();
         return $result;
     }
     public function sortByCategory($id){
         $query = "SELECT * FROM produits WHERE id_categories = $id";
+        $queryObj = $this->dataBase->query($query);
+        $result = $queryObj->fetchAll();
+        return $result;
+    }
+    public function selectSort($what){
+        $query = "SELECT * FROM produits ORDER BY $what";
         $queryObj = $this->dataBase->query($query);
         $result = $queryObj->fetchAll();
         return $result;
