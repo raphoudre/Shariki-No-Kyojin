@@ -41,14 +41,17 @@ body {
 .myList{
     list-style-type: none!important;
 }
-
+.addbanner{
+    width: 200;
+    height: 400px;
+}
 .bigRow{
     width: 100%!important;
     height: 100vh!important;
 }
 .cardImg{
-    max-width: 190px!important;
-    max-height: 190px!important;
+    max-width: 10rem!important;
+    max-height: 10rem!important;
     object-fit: contain!important;
 }
 .cartFormStyle{

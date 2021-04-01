@@ -25,7 +25,7 @@
     <?= headerPage(); ?>
     <div class="container-fluid">
         <div class="d-flex flex-row rounded">
-            <div class="d-flex flex-column bg-white border border-dark rounded col-xl-2 col-sm-3 p-2 m-2">
+            <div class="d-flex flex-column bg-white border border-dark rounded col-xl-2 col-sm-3 p-2">
                 <div class="">
                     <div>
                         <a class="nav-link text-dark text-center" id="goPanier" href="views/cart.php"><i
@@ -73,13 +73,15 @@
                         <button type="submit" class="m-1 btn btn-outline-dark">Appliquer</button>
                     </form>
                 </div>
+                <div class="ad-banner">
+                </div>
             </div>
             <div class="d-flex flex-row">
                 <div class="d-flex flex-row flex-wrap col-12">
                     <?php foreach($allProducts as $row) {?>
                         <div class="m-2 border border-dark rounded w-100 bg-white" id="product<?= $row['id'] ?>">
                             <div class="m-2 d-flex flex-row justify-content-between">
-                                <img class="rounded cardImg" src="../uploads/<?= $row['image'] ?>" alt="" height="auto" class="noshrink">
+                                <img class="rounded cardImg img-fluid" src="../uploads/<?= $row['image'] ?>" alt="" height="auto" class="noshrink">
                                 <div class="">
                                     <h4 class="card-title">
                                         <p class="text-dark" href=""><?= $row['nom'] ?></p>
